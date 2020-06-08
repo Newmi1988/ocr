@@ -1,0 +1,10 @@
+version: '2.0'
+services:
+    orc:
+        build: .
+        volumes: 
+            - .:/home/work
+        image: ubuntu/terract
+        command: gunicorn --bind 0.0.0.0:8000 run:app
+        ports: 
+            - 8000:8000
